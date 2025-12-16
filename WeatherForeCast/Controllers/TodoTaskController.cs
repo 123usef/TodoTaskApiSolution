@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TodoTaskApi.Context;
+using TodoTaskApi.Models;
 
 namespace TodoTaskApi.Controllers
 {
@@ -17,15 +18,15 @@ namespace TodoTaskApi.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult Get()
+        //[ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<TodoTask> Get()
         {
             var todo = _db.todoTasks.ToList();
             if(todo.Count() > 0)
             {
                 return Ok(todo);
             }
-            return NotFound();
+            return Ok("No Data Found");
         }
     }
 }
