@@ -31,7 +31,7 @@ namespace WeatherForeCast
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
+            app.UseCors();
 
             app.MapControllers();
 

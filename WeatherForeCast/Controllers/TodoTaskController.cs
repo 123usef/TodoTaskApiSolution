@@ -5,9 +5,8 @@ using TodoTaskApi.Models;
 
 namespace TodoTaskApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class TodoTaskController : ControllerBase
+   
+    public class TodoTaskController : BaseController
     {
         private readonly ApplicationDbContext _db;
         public TodoTaskController(ApplicationDbContext db)
