@@ -6,6 +6,6 @@
         public string Name { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        public IEnumerable<TodoTask> todoTasks { get; set; } = new HashSet<TodoTask>();
+        public IEnumerable<TodoTask>? todoTasks { get; set; } = new HashSet<TodoTask>();
     }
 }
